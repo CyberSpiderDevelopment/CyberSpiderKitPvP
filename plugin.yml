@@ -1,0 +1,27 @@
+name: KitPvP
+version: 1.0.0
+main: me.athena222.kitpvp.Main
+author: Athena222
+description: A custom KitPvP plugin.
+depend: [Vault]
+softdepend: [FeatherBoard]
+
+commands:
+   clearchat:
+     description: Clear Chat!
+     usage: /clearchat
+     aliases: [cc]
+
+permissions:     
+   clearchat.use:
+     description: Gives access to /clearchat
+     default: op
+   clearchat.reload:
+     description: Gives access to /clearchat reload
+     default: op  
+   clearchat.me:
+     description: Gives access to /clearchat me
+     default: op
+   clearchat.player:
+     description: Gives access to /clearchat <player>
+     default: op
