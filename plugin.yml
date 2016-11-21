@@ -7,21 +7,12 @@ depend: [Vault]
 softdepend: [FeatherBoard]
 
 commands:
-   clearchat:
-     description: Clear Chat!
-     usage: /clearchat
-     aliases: [cc]
+   admin:
+     description: KitPvP Administration Commands.
+     usage: /admin
+     aliases: [kitpvpadmin]
 
 permissions:     
-   clearchat.use:
-     description: Gives access to /clearchat
-     default: op
-   clearchat.reload:
-     description: Gives access to /clearchat reload
-     default: op  
-   clearchat.me:
-     description: Gives access to /clearchat me
-     default: op
-   clearchat.player:
-     description: Gives access to /clearchat <player>
+   kitpvp.admin:
+     description: Gives access to /admin
      default: op

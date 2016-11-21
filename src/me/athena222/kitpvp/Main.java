@@ -51,12 +51,8 @@ public class Main extends JavaPlugin {
 		else if(getServer().getPluginManager().isPluginEnabled("FeatherBoard")) {
 			logger.info("Successfully found FeatherBoard! Hooking into it to add placeholders.");
 			
-			// kitpvp_kit
-			// kitpvp_coins
-			
 			be.maximvdw.featherboard.api.PlaceholderAPI.registerOfflinePlaceholder("kitpvp_kit", true, 
 					new be.maximvdw.featherboard.api.PlaceholderAPI.PlaceholderRequestEventHandler() {
-
 	                    @Override
 	                    public String onPlaceholderRequest(be.maximvdw.featherboard.api.PlaceholderAPI.PlaceholderRequestEvent e) {                 	
 	                        String kit = usersConfig.getConfigurationSection("users" + "." + e.getPlayer().getUniqueId().toString()).getString("Kit");
@@ -69,7 +65,6 @@ public class Main extends JavaPlugin {
 			
 			be.maximvdw.featherboard.api.PlaceholderAPI.registerOfflinePlaceholder("kitpvp_coins", true, 
 					new be.maximvdw.featherboard.api.PlaceholderAPI.PlaceholderRequestEventHandler() {
-
 	                    @Override
 	                    public String onPlaceholderRequest(be.maximvdw.featherboard.api.PlaceholderAPI.PlaceholderRequestEvent e) {                    	
 	                        String coins = ChatColor.GOLD + "" + usersConfig.getConfigurationSection("users" + "." + e.getPlayer().getUniqueId().toString()).getInt("Coins");

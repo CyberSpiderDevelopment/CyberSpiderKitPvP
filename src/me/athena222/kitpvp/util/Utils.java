@@ -33,6 +33,16 @@ public class Utils {
 		plugin.saveData();
 	}
 
+	public static void setKills(Player player, int kills) {
+		ConfigurationSection cs = plugin.usersConfig.getConfigurationSection("users" + "." + player.getUniqueId().toString());
+		cs.set("Kills", kills);
+		plugin.saveData();
+	}
+	
+	public static void resetSuffix(Player player) {
+		plugin.chat.setPlayerSuffix(player, "");
+	}
+	
 	public static void sendCenteredMessage(Player player, String message) {
 		if (message == null || message.equals(""))
 			player.sendMessage("");
