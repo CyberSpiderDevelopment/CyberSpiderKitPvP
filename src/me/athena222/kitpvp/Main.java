@@ -15,6 +15,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.athena222.kitpvp.commands.CommandAdmin;
 import me.athena222.kitpvp.listeners.FoodLevelChange;
 import me.athena222.kitpvp.listeners.InventoryClick;
 import me.athena222.kitpvp.listeners.PlayerDeath;
@@ -40,6 +41,7 @@ public class Main extends JavaPlugin {
 		saveDefaultConfig();
 		setupUserConfig();
 		saveData();
+		registerCommands();
 		registerListeners();
 		setupSelectClassInv();
         setupPermissions();
@@ -91,6 +93,10 @@ public class Main extends JavaPlugin {
 		int slot;
 		while ((slot = selectClass.firstEmpty()) != -1) 
 			selectClass.setItem(slot, pane);	
+	}
+	
+	public void registerCommands() {
+		getCommand("admin").setExecutor(new CommandAdmin(this));
 	}
 	
 	public void registerListeners() {

@@ -27,14 +27,11 @@ public class PlayerDeath implements Listener {
 			
 			if(killer == null) {  // Handles Essentials deaths (skull)
 				return;
-			}
-			
-			// ^^^^ if killer is lightning
-			
+			} // check if killer is lightning
+
 			ConfigurationSection cs = plugin.usersConfig.getConfigurationSection("users" + "." + killer.getUniqueId().toString());
 			
-// Zombie, Squid, Blaze, Guardian, Spider are the donator ranks + groups, hook into vault & check
-// make donor coin kill amounts configurable
+			// make donor coin kill amounts configurable
 
 			cs.set("Kills", 1 + cs.getInt("Kills"));
 			
@@ -178,9 +175,50 @@ public class PlayerDeath implements Listener {
 				Utils.setLevel(killer, 15);
 				killer.sendMessage("");
 				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You are now " + ChatColor.YELLOW + "Level 15" + ChatColor.GOLD + "!");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You need " + ChatColor.YELLOW + "50" + ChatColor.GOLD + " more kills to get to " + ChatColor.YELLOW + "Level 16" + ChatColor.GOLD + "!");
 				killer.sendMessage("");
 				plugin.chat.setPlayerSuffix(killer, ChatColor.GRAY + " [" + ChatColor.YELLOW + "Level 15" + ChatColor.GRAY + "]");
 			}	
+			if(cs.getInt("Kills") == 300) { // Level 16 - 300 Kills
+				Utils.setLevel(killer, 16);
+				killer.sendMessage("");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You are now " + ChatColor.YELLOW + "Level 16" + ChatColor.GOLD + "!");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You need " + ChatColor.YELLOW + "50" + ChatColor.GOLD + " more kills to get to " + ChatColor.YELLOW + "Level 17" + ChatColor.GOLD + "!");
+				killer.sendMessage("");
+				plugin.chat.setPlayerSuffix(killer, ChatColor.GRAY + " [" + ChatColor.YELLOW + "Level 16" + ChatColor.GRAY + "]");
+			}
+			if(cs.getInt("Kills") == 350) { // Level 17 - 250 Kills
+				Utils.setLevel(killer, 17);
+				killer.sendMessage("");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You are now " + ChatColor.YELLOW + "Level 17" + ChatColor.GOLD + "!");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You need " + ChatColor.YELLOW + "50" + ChatColor.GOLD + " more kills to get to " + ChatColor.YELLOW + "Level 18" + ChatColor.GOLD + "!");
+				killer.sendMessage("");
+				plugin.chat.setPlayerSuffix(killer, ChatColor.GRAY + " [" + ChatColor.YELLOW + "Level 17" + ChatColor.GRAY + "]");
+			}
+			if(cs.getInt("Kills") == 400) { // Level 18 - 250 Kills
+				Utils.setLevel(killer, 18);
+				killer.sendMessage("");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You are now " + ChatColor.YELLOW + "Level 18" + ChatColor.GOLD + "!");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You need " + ChatColor.YELLOW + "50" + ChatColor.GOLD + " more kills to get to " + ChatColor.YELLOW + "Level 19" + ChatColor.GOLD + "!");
+				killer.sendMessage("");
+				plugin.chat.setPlayerSuffix(killer, ChatColor.GRAY + " [" + ChatColor.YELLOW + "Level 18" + ChatColor.GRAY + "]");
+			}
+			if(cs.getInt("Kills") == 450) { // Level 19 - 450 Kills
+				Utils.setLevel(killer, 19);
+				killer.sendMessage("");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You are now " + ChatColor.YELLOW + "Level 19" + ChatColor.GOLD + "!");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You need " + ChatColor.YELLOW + "100" + ChatColor.GOLD + " more kills to get to " + ChatColor.YELLOW + "Level 20" + ChatColor.GOLD + "!");
+				killer.sendMessage("");
+				plugin.chat.setPlayerSuffix(killer, ChatColor.GRAY + " [" + ChatColor.YELLOW + "Level 19" + ChatColor.GRAY + "]");
+			}
+			if(cs.getInt("Kills") == 550) { // Level 20 - 550 Kills
+				Utils.setLevel(killer, 20);
+				killer.sendMessage("");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You are now " + ChatColor.YELLOW + "Level 20" + ChatColor.GOLD + "!");
+				Utils.sendCenteredMessage(killer, ChatColor.GOLD + "You're the maximum level!");
+				killer.sendMessage("");
+				plugin.chat.setPlayerSuffix(killer, ChatColor.GRAY + " [" + ChatColor.YELLOW + "Level 20" + ChatColor.GRAY + "]");
+			}
 			
 			if(e.getDrops().contains(InventoryClick.skull)) {
 				e.getDrops().remove(InventoryClick.skull);

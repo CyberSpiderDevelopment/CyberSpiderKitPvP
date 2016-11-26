@@ -48,12 +48,13 @@ public class PlayerInteract implements Listener {
 			    if(secondsLeft > 0) {
 			    	player.sendMessage(ChatColor.RED + "You cant use that command for another " + secondsLeft + " seconds!");
 			    	player.sendMessage(ChatColor.GRAY + "Please note that cooldowns are " + ChatColor.UNDERLINE + "3 days");	
-			    	return false; // remove this? this will just return &f/test in chat ... hmm!
 			    	}
 			    else if (secondsLeft == 0) {
 			  
 			    }
 			} */
+			
+			// else {
 			
 			if(e.getItem().getItemMeta().getDisplayName().equals(ChatColor.RED + "" + ChatColor.BOLD + "Lightning Strike Ability") && (e.getItem().getType().equals(Material.BLAZE_POWDER))) { // lightning strike			
 				Location origin = player.getEyeLocation();
