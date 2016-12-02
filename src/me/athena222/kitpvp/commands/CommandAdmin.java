@@ -78,10 +78,12 @@ public class CommandAdmin implements CommandExecutor {
 			else if(args[0].equalsIgnoreCase("setkills") && (args[1].equalsIgnoreCase(target.getName()))) {
 				Utils.setKills(player, kills);
 				player.sendMessage(prefix + "Successfully set " + target.getName() + "'s kills to " + kills + "!");
+				target.sendMessage(ChatColor.GRAY + "An administrator has set your amount of kills to " + kills + "!");
 			}
 			else if(args[0].equalsIgnoreCase("setlevel") && (args[1].equalsIgnoreCase(target.getName()))) {
 				Utils.setLevel(player, level);
 				player.sendMessage(prefix + "Successfully set " + target.getName() + "'s level to " + level + "!");
+				target.sendMessage(ChatColor.GRAY + "An administrator has set your kitpvp level to " + level + "!");
 			}
 		}
 		
@@ -95,14 +97,17 @@ public class CommandAdmin implements CommandExecutor {
 			if(args[0].equalsIgnoreCase("setkit") && (args[1].equalsIgnoreCase(target.getName())) && (args[2].equalsIgnoreCase("archer"))) {
 				Utils.setKit(player, "Archer");
 				player.sendMessage(prefix + "Successfully set " + target.getName() + "'s kit to Archer!");
+				target.sendMessage(ChatColor.GRAY + "An administrator has set your kit to Archer!");
 			}
 			else if(args[0].equalsIgnoreCase("setkit") && (args[1].equalsIgnoreCase(target.getName())) && (args[2].equalsIgnoreCase("mage"))) {
 				Utils.setKit(player, "Mage");
 				player.sendMessage(prefix + "Successfully set " + target.getName() + "'s kit to Mage!");
+				target.sendMessage(ChatColor.GRAY + "An administrator has set your kit to Mage!");
 			}
 			else if(args[0].equalsIgnoreCase("setkit") && (args[1].equalsIgnoreCase(target.getName())) && (args[2].equalsIgnoreCase("swordsman"))) {
 				Utils.setKit(player, "Swordsman");
 				player.sendMessage(prefix + "Successfully set " + target.getName() + "'s kit to Swordsman!");
+				target.sendMessage(ChatColor.GRAY + "An administrator has set your kit to Swordsman!");
 			}
 			else {
 				player.sendMessage(prefix + "Something went wrong! Check your spelling, and/or if it was a valid kit.");
